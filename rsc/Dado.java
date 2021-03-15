@@ -7,7 +7,7 @@ public class Dado {
         int dado = valorMinimo;
         int resultado = valorMinimo;
         for (int i = 1; i <= cantDados; i++) {
-            dado =(int) Math.floor(Math.random()*((valorMaximo-valorMinimo+1)+valorMinimo));
+            dado =(int) Math.floor(Math.random()*(valorMaximo-valorMinimo+1)+valorMinimo);
             if (resultado < dado)
                 resultado = dado;
         }

@@ -1,4 +1,7 @@
+import java.util.Scanner;
+
 public class juego {
+        Scanner scan = new Scanner(System.in);
 
     private Bestias ejercitoBestias[];
     private Heroes ejercitoHeroes[];
@@ -8,6 +11,8 @@ public class juego {
     //private int contadorHumanos;
     
     public juego(){
+    
+    
         ejercitoBestias = new Bestias[CANTIDAD];
         ejercitoHeroes = new Heroes[CANTIDAD];
     }
@@ -71,10 +76,10 @@ public class juego {
     public void inicializarBestias(){
         int random = 0;
         for (int i = 0; i < ejercitoBestias.length; i++) {
-            random = Dado.tirarDado(0, 2, 1);
+            random = Dado.tirarDado(0, 1, 1);
             switch (random) {
                 case 0:
-                    ejercitoBestias[i] = new Orco("Orco"+Orco.getInstancias());
+                    ejercitoBestias[i] = new Orco("Orco "+Orco.getInstancias());
                     break;
                 case 1:
                     ejercitoBestias[i] = new Trasgo("Trasgo "+Trasgo.getInstancias());
