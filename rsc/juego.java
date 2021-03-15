@@ -106,18 +106,87 @@ public class juego {
         int resultadoPelea;
         for (int z = 0; z < NUMEJERCITOS; z++){
             System.out.println("\n    --------Pelea " + contadorPelea + " --------");
-            if(ejercitoHeroes[z].getNombre() == "Elfos numero " && ejercitoBestias[z].getNombre() == "Orcos nuermo"){
-                
-            }
-            if((ejercitoBestias[z].getAtaque()) > (ejercitoHeroes[z].getArmadura())){
-                resultadoPelea = (ejercitoBestias[z].getAtaque()) - (ejercitoHeroes[z].getArmadura());
-                System.out.println(ejercitoBestias[z].getNombre() + " ataco a " + ejercitoHeroes[z].getNombre());
-            }
-            
-            resultadoPelea = (ejercitoHeroes[z].getAtaque()) - (ejercitoBestias[z].getArmadura());
-            System.out.println(ejercitoHeroes[z].getNombre() + " regreso ataque a " + ejercitoBestias[z].getNombre());
-            contadorPelea++;
-        }
 
+            if(ejercitoHeroes[z].getNombre() == "Elfos numero " && ejercitoBestias[z].getNombre() == "Orcos numero"){
+                if((ejercitoHeroes[z].getAtaque()) > (ejercitoBestias[z].getArmadura())){
+                    resultadoPelea = (((ejercitoHeroes[z].getAtaque())+((ejercitoHeroes[z].getAtaque()) / 10)) - (ejercitoBestias[z].getArmadura()));
+                    System.out.println("Aumentando nivel de rabia para Elfos");
+                    System.out.println(ejercitoHeroes[z].getNombre() + " ataco a " + ejercitoBestias[z].getNombre());
+                    System.out.println("Resultado de pelea entre " + ejercitoHeroes[z].getNombre() + " y " + ejercitoBestias[z].getNombre() + ":");
+                    int vidaResultado = ((ejercitoBestias[z].getVida()) - (resultadoPelea));
+
+                    System.out.println("Vida de " + ejercitoBestias[z].getNombre() +" es de " + vidaResultado);
+                    System.out.println("Vida de " + ejercitoHeroes[z].getNombre() +" es de " + ejercitoHeroes[z].getVida());
+                    
+                    if((ejercitoBestias[z].getAtaque()) > (ejercitoHeroes[z].getArmadura())){    
+                        resultadoPelea = (ejercitoBestias[z].getAtaque()) - (ejercitoHeroes[z].getArmadura());
+                        System.out.println("\n " + ejercitoBestias[z].getNombre() + " regreso ataque a " + ejercitoHeroes[z].getNombre());
+                        System.out.println("Resultado de pelea entre " + ejercitoBestias[z].getNombre() + " y " + ejercitoHeroes[z].getNombre() + ":");
+                        int vidaResultado2 = ((ejercitoBestias[z].getVida()) - (resultadoPelea));
+
+                        System.out.println("Vida de " + ejercitoBestias[z].getNombre() +" es de " + vidaResultado2);
+                        System.out.println("Vida de " + ejercitoHeroes[z].getNombre() +" es de " + ejercitoHeroes[z].getVida());
+                    }else{
+                        System.out.println(ejercitoBestias[z].getNombre() + " no regreso ataque porque el ataque es menor a la armadura del oponente");
+                    }
+                }else{
+                    System.out.println("No hay daño porque el ataque de " + ejercitoHeroes[z].getNombre() + " es menor a la armadura del oponente " + ejercitoBestias[z].getNombre());
+                }
+            }
+            else{
+                if(ejercitoHeroes[z].getNombre() == "Hobbit numero " && ejercitoBestias[z].getNombre() == "Trasgo numero"){
+                        resultadoPelea = (((ejercitoHeroes[z].getAtaque())-5 )) - (ejercitoBestias[z].getArmadura());
+                        System.out.println("Disminuyendo nivel de potencia ofenciva para Hobbit");
+                    if((ejercitoHeroes[z].getAtaque()) > (ejercitoBestias[z].getArmadura())){
+                        System.out.println(ejercitoHeroes[z].getNombre() + " ataco a " + ejercitoBestias[z].getNombre());
+                        System.out.println("Resultado de pelea entre " + ejercitoHeroes[z].getNombre() + " y " + ejercitoBestias[z].getNombre() + ":");
+                        int vidaResultado = ((ejercitoBestias[z].getVida()) - (resultadoPelea));
+    
+                        System.out.println("Vida de " + ejercitoBestias[z].getNombre() +" es de " + vidaResultado);
+                        System.out.println("Vida de " + ejercitoHeroes[z].getNombre() +" es de " + ejercitoHeroes[z].getVida());
+                        
+                        if((ejercitoBestias[z].getAtaque()) > (ejercitoHeroes[z].getArmadura())){    
+                            resultadoPelea = (ejercitoBestias[z].getAtaque()) - (ejercitoHeroes[z].getArmadura());
+                            System.out.println("\n " + ejercitoBestias[z].getNombre() + " regreso ataque a " + ejercitoHeroes[z].getNombre());
+                            System.out.println("Resultado de pelea entre " + ejercitoBestias[z].getNombre() + " y " + ejercitoHeroes[z].getNombre() + ":");
+                            int vidaResultado2 = ((ejercitoBestias[z].getVida()) - (resultadoPelea));
+    
+                            System.out.println("Vida de " + ejercitoBestias[z].getNombre() +" es de " + vidaResultado2);
+                            System.out.println("Vida de " + ejercitoHeroes[z].getNombre() +" es de " + ejercitoHeroes[z].getVida());
+                        }else{
+                            System.out.println(ejercitoBestias[z].getNombre() + " no regreso ataque porque el ataque es menor a la armadura del oponente");
+                        }
+                    }else{
+                        System.out.println("No hay daño porque el ataque de " + ejercitoHeroes[z].getNombre() + " es menor a la armadura del oponente " + ejercitoBestias[z].getNombre());
+                        }
+                }else{          
+            if((ejercitoHeroes[z].getAtaque()) > (ejercitoBestias[z].getArmadura())){
+                resultadoPelea = (ejercitoHeroes[z].getAtaque()) - (ejercitoBestias[z].getArmadura());
+                System.out.println(ejercitoHeroes[z].getNombre() + " ataco a " + ejercitoBestias[z].getNombre());
+                System.out.println("Resultado de pelea entre " + ejercitoHeroes[z].getNombre() + " y " + ejercitoBestias[z].getNombre() + ":");
+                int vidaResultado = ((ejercitoBestias[z].getVida()) - (resultadoPelea));
+
+                System.out.println("Vida de " + ejercitoBestias[z].getNombre() +" es de " + vidaResultado);
+                System.out.println("Vida de " + ejercitoHeroes[z].getNombre() +" es de " + ejercitoHeroes[z].getVida());
+                
+                if((ejercitoBestias[z].getAtaque()) > (ejercitoHeroes[z].getArmadura())){    
+                    resultadoPelea = (ejercitoBestias[z].getAtaque()) - (ejercitoHeroes[z].getArmadura());
+                    System.out.println("\n" + ejercitoBestias[z].getNombre() + " regreso ataque a " + ejercitoHeroes[z].getNombre());
+                    System.out.println("Resultado de pelea entre " + ejercitoBestias[z].getNombre() + " y " + ejercitoHeroes[z].getNombre() + ":");
+                    int vidaResultado2 = ((ejercitoBestias[z].getVida()) - (resultadoPelea));
+
+                    System.out.println("Vida de " + ejercitoBestias[z].getNombre() +" es de " + vidaResultado2);
+                    System.out.println("Vida de " + ejercitoHeroes[z].getNombre() +" es de " + ejercitoHeroes[z].getVida());
+                }else{
+                    System.out.println(ejercitoBestias[z].getNombre() + " no regreso ataque porque el ataque es menor a la armadura del oponente");
+                }
+            }else{
+                System.out.println("No hay daño porque el ataque de " + ejercitoHeroes[z].getNombre() + " es menor a la armadura del oponente " + ejercitoBestias[z].getNombre());
+            }
+
+        }
+            contadorPelea++;
+            }
+        }
     }
 }
