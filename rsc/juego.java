@@ -104,10 +104,18 @@ public class juego {
     public void pelea(){
         int contadorPelea=1;
         int resultadoPelea;
-        for (int z = 0; z <= ejercitoBestias.length; z++){
-            System.out.println("Pelea " + contadorPelea);
-            resultadoPelea = (ejercitoBestias[z].getAtaque()) - (ejercitoHeroes[z].getArmadura());
-            System.out.println(ejercitoBestias[z].getNombre() + "ataco a " + ejercitoHeroes[z].getNombre());
+        for (int z = 0; z < NUMEJERCITOS; z++){
+            System.out.println("\n    --------Pelea " + contadorPelea + " --------");
+            if(ejercitoHeroes[z].getNombre() == "Elfos numero " && ejercitoBestias[z].getNombre() == "Orcos nuermo"){
+                
+            }
+            if((ejercitoBestias[z].getAtaque()) > (ejercitoHeroes[z].getArmadura())){
+                resultadoPelea = (ejercitoBestias[z].getAtaque()) - (ejercitoHeroes[z].getArmadura());
+                System.out.println(ejercitoBestias[z].getNombre() + " ataco a " + ejercitoHeroes[z].getNombre());
+            }
+            
+            resultadoPelea = (ejercitoHeroes[z].getAtaque()) - (ejercitoBestias[z].getArmadura());
+            System.out.println(ejercitoHeroes[z].getNombre() + " regreso ataque a " + ejercitoBestias[z].getNombre());
             contadorPelea++;
         }
 
