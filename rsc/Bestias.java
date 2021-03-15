@@ -3,8 +3,8 @@ public class Bestias extends Personaje {
 
     private static int instanciasBestias;
 
-    public Bestias(int vida, int armadura, String nombre){
-        super(vida, armadura, 90,nombre, false);
+    public Bestias(int vida, int armadura,int ataqueMaximo, String nombre){
+        super(vida, armadura, ataqueMaximo, nombre, false);
         Bestias.instanciasBestias++;
     }
 

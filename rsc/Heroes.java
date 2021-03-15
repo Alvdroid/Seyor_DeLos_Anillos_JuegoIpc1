@@ -1,10 +1,8 @@
 public class Heroes extends Personaje {
 
-    private static int ataqueMaximo = 100;
-
     private static int instanciasHeroes;
 
-    public Heroes(int vida, int armadura, String nombre){
+    public Heroes(int vida, int armadura,int ataqueMaximo, String nombre){
         super(vida, armadura, ataqueMaximo, nombre, true);
         Heroes.instanciasHeroes++;
     }

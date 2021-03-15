@@ -4,7 +4,7 @@ public class Dado {
     }
 
     public static int tirarDado(int valorMinimo, int valorMaximo, int cantDados){
-        int dado = valorMinimo;
+        int dado;
         int resultado = valorMinimo;
         for (int i = 1; i <= cantDados; i++) {
             dado =(int) Math.floor(Math.random()*(valorMaximo-valorMinimo+1)+valorMinimo);

@@ -14,7 +14,6 @@ public class Personaje {
         this.armadura = armadura;
         this.nombre = nombre;
         this.esHeroe = esHeroe;
-        instanciasPersonajes++;
     }
 
     public void saludar(){
@@ -44,5 +43,7 @@ public class Personaje {
     public static int getInstancias(){
         return Personaje.instanciasPersonajes;
     }
+
+
 
 }

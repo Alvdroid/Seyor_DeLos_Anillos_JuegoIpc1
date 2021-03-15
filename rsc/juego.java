@@ -1,22 +1,26 @@
 import java.util.Scanner;
 
 public class juego {
-        Scanner scan = new Scanner(System.in);
+
+    Scanner scan = new Scanner(System.in);
 
     private Bestias ejercitoBestias[];
     private Heroes ejercitoHeroes[];
 
-    private final int CANTIDAD = 5;
+    private int NUMEJERCITOS;
 
     //private int contadorHumanos;
     
     public juego(){
-    
-    
-        ejercitoBestias = new Bestias[CANTIDAD];
-        ejercitoHeroes = new Heroes[CANTIDAD];
-    }
 
+        System.out.println("Ingrese la catidad de integrantes para los 2 ejercitos");
+        System.out.println("Siendo el un maximo de 6 y minimo de 1");
+        NUMEJERCITOS = scan.nextInt();
+        ejercitoBestias = new Bestias[NUMEJERCITOS];
+        ejercitoHeroes = new Heroes[NUMEJERCITOS];
+        
+    }
+    
     public void presentarPersonajes(Personaje ejercito[]){
 
         if (ejercito.length> 0 ){
@@ -45,14 +49,22 @@ public class juego {
     }
 
     public void jugar(){
-        System.out.println("Bienvenido al juego del señor de los anillos: \n\n");
+        System.out.println("Bienvenido al juego del señor de los anillos:\n");
+
+        if(NUMEJERCITOS > 0 && NUMEJERCITOS < 7){
+                
+        
         
         this.inicializarHeroes();
         this.inicializarBestias();
 
         this.presentarPersonajes(ejercitoBestias);
         this.presentarPersonajes(ejercitoHeroes);
-        
+
+            }
+        else{
+            System.out.println("Numero de ejercitos no permitidos");
+        }
     }
 
     public void inicializarHeroes(){
@@ -61,13 +73,13 @@ public class juego {
             random = Dado.tirarDado(0, 2, 1);
             switch (random) {
                 case 0:
-                    ejercitoHeroes[i] = new Humano("Humano "+Humano.getInstancias());
+                    ejercitoHeroes[i] = new Humano("Humano numero "+(Humano.getInstancias()+1), Dado.tirarDado(0, 100, 2));
                     break;
                 case 1:
-                    ejercitoHeroes[i] = new Elfo("Elfo "+Elfo.getInstancias());
+                    ejercitoHeroes[i] = new Elfo("Elfo numero "+(Elfo.getInstancias()+1), Dado.tirarDado(0, 100, 2));
                     break;
                 case 2:
-                    ejercitoHeroes[i] = new Hobbit("Hobbit "+Hobbit.getInstancias());
+                    ejercitoHeroes[i] = new Hobbit("Hobbit numero "+(Hobbit.getInstancias()+1), Dado.tirarDado(0, 100, 2));
                     break;
             }
         }
@@ -79,12 +91,22 @@ public class juego {
             random = Dado.tirarDado(0, 1, 1);
             switch (random) {
                 case 0:
-                    ejercitoBestias[i] = new Orco("Orco "+Orco.getInstancias());
+                    ejercitoBestias[i] = new Orco("Orco numero "+(Orco.getInstancias()+1), Dado.tirarDado(0, 90, 2));
                     break;
                 case 1:
-                    ejercitoBestias[i] = new Trasgo("Trasgo "+Trasgo.getInstancias());
+                    ejercitoBestias[i] = new Trasgo("Trasgo numero "+(Trasgo.getInstancias()+1), Dado.tirarDado(0, 90, 2));
                     break;
             }
         }
+    }
+
+    public void pelea(){
+        int cotadorPelea;
+        int resultadoPelea;
+        for (int z = 0; z <= ejercitoBestias.length; z++){
+            resultadoPelea = (ejercitoBestias[z].getAtaque()) - (ejercitoHeroes[z].getArmadura());
+            System.out.println(ejercitoBestias[z].getNombre() + "ataco a " + ejercitoHeroes[z].getNombre());
+        }
+
     }
 }
