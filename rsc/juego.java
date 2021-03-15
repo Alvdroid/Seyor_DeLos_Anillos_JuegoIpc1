@@ -60,6 +60,7 @@ public class juego {
 
         this.presentarPersonajes(ejercitoBestias);
         this.presentarPersonajes(ejercitoHeroes);
+        this.pelea();
 
             }
         else{
@@ -101,11 +102,13 @@ public class juego {
     }
 
     public void pelea(){
-        int cotadorPelea;
+        int contadorPelea=1;
         int resultadoPelea;
         for (int z = 0; z <= ejercitoBestias.length; z++){
+            System.out.println("Pelea " + contadorPelea);
             resultadoPelea = (ejercitoBestias[z].getAtaque()) - (ejercitoHeroes[z].getArmadura());
             System.out.println(ejercitoBestias[z].getNombre() + "ataco a " + ejercitoHeroes[z].getNombre());
+            contadorPelea++;
         }
 
     }
